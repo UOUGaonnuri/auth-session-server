@@ -1,4 +1,4 @@
-package com.gaounuri.authsessionserver.config;
+package com.gaounuri.authsessionserver.config.security;
 
 import org.springframework.context.annotation.Configuration;
 
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSessionListener;
 
 @Configuration
 public class SessionListener implements HttpSessionListener {
-    private final Integer sessionTimeout = 60 * 60 * 60;
+    private final Integer sessionTimeout = 5 * 60;
     @Override
     public void sessionCreated(HttpSessionEvent event){
         event.getSession().setMaxInactiveInterval(sessionTimeout);

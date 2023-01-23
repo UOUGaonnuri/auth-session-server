@@ -1,4 +1,4 @@
-package com.gaounuri.authsessionserver.config;
+package com.gaounuri.authsessionserver.config.security;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

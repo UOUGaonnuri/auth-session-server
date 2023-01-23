@@ -1,14 +1,13 @@
 package com.gaounuri.authsessionserver.user.dto;
 
 import com.gaounuri.authsessionserver.user.enums.Role;
-import lombok.Builder;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 public class TestUserDTO {
     @Data
     @Builder
-    @RequiredArgsConstructor
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class UserDetail {
         private Long userId;
         private String userName;
@@ -18,7 +17,17 @@ public class TestUserDTO {
 
     @Data
     @Builder
-    @RequiredArgsConstructor
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class UserLoginForm {
+        private String userName;
+        private String password;
+    }
+
+    @Data
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class UserRegisterForm {
         private String userName;
         private String userEmail;
