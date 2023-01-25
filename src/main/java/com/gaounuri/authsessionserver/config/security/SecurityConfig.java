@@ -25,17 +25,15 @@ public class SecurityConfig {
         http.
                 csrf()
                     .disable()
+                .authorizeRequests()
+                    .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                    .antMatchers("/api/auth/v1").permitAll()
+                    .antMatchers("/api/v1/**").authenticated()
+                    .and()
                 .sessionManagement()
                     .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                     .and()
-                .exceptionHandling()
-                    .authenticationEntryPoint(new CusotmAuthenticationEntryPoint())
-                    .and()
-                .authorizeRequests()
-                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .antMatchers("/api/auth/v1").permitAll()
-                .antMatchers("/api/v1/**").authenticated()
-                .and()
+
                 .httpBasic()
         ;
 
